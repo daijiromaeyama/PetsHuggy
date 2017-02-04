@@ -19,11 +19,9 @@
             a[href="#"]
               | 利用の流れ
           li
-            a[href="#"]
-              | アカウント作成
+            = link_to "アカウント作成", new_user_registration_path
           li
-            a[href="#"]
-              | ログイン
+            = link_to "ログイン", new_user_session_path
 
   div.container
     div.row
