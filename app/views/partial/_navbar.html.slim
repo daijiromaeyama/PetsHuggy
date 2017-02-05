@@ -20,3 +20,5 @@
         = link_to "アカウント作成", new_user_registration_path
       li
         = link_to "ログイン", new_user_session_path
+      li
+        = link_to "ログアウト", destroy_user_session_path, method: :delete
