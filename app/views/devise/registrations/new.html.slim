@@ -8,6 +8,9 @@ div.container
         | 登録
       = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
         = render 'partial/deviseErrorMsg'
+
+        = link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path
+
         .form-group
           = f.label :email
           br
