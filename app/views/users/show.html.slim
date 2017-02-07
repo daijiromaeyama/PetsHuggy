@@ -1,2 +1,25 @@
-h1
-  | Users#show
+nav.navbar.navbar-devise
+  = render 'partial/navbar'
+
+div.container
+  div.row
+    div.col-lg-3.col-md-4
+      div.user-profile.row-space-4.text-center
+        = image_tag @user.image, class: "profile-full img-circle"
+
+      div.panel.panel-default.verifications.hidden-xs.hidden-sm
+        div.panel-heading
+          | 認証済みID
+        div.panel-body
+          #ver-email
+            | メールアドレス
+          br
+          #ver-tel
+            | 電話番号
+          br
+          #ver-facebook
+            | Facebook
+
+    div.col-lg-9.col-md-8.col-sm-12
+      h1
+        | こんにちは
