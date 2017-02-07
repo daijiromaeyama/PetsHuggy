@@ -32,4 +32,6 @@
             span.caret
           ul.dropdown-menu
             li
+              = link_to "プロフィール", user_path(current_user)
+            li
               = link_to "ログアウト", destroy_user_session_path, method: :delete
