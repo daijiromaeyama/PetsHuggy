@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :users, only: :show
 
-  resources :listings, only: [:new, :create, :edit]
+  resources :listings, only: [:new, :create]
 
   get 'manage-listing/:id/basics' => 'listings#basics', as: 'manage-listing_basics'
 end
