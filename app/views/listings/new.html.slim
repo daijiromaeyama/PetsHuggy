@@ -1,1 +1,40 @@
-| a
+nav.navbar.navbar-devise
+  = render 'partial/navbar'
+
+div.container
+  div.row
+    div.col-md-6.col-md-offset-3
+      div.panel.panel-default
+        div.panel-heading
+          div.text-center
+            span[style="font-size:24px;"]
+              | ペットリスティングを掲載する
+
+        div.panel-body
+          = form_for @listing do |f|
+            div.row
+              div.col-md-12.select
+                div.form-group
+                  label
+                    | お家の種類
+                  = f.select :home_type, [["一軒家", "一軒家"], ["マンション", "マンション"], ["アパート"]], { prompt: "選択してください" }, { required: "true", autofocus: "true", class: "form-control" }
+            br
+
+            div.row
+              div.col-md-12.select
+                div.form-group
+                  label
+                    | ペットの種類
+                  = f.select :pet_type, [["犬", "犬"], ["猫", "猫"], ["鳥類", "鳥類"], ["爬虫類", "爬虫類"], ["魚類", "魚類"], ["両生類", "両生類"], ["その他", "その他"]], { prompt: "選択してください" }, { required: "true", autofocus: "true", class: 'form-control' }
+            br
+
+            div.row
+              div.col-md-12.select
+                div.form-group
+                  label
+                    | ペットのサイズ
+                  = f.select :pet_size, [["小型", "小型"], ["中型", "中型"], ["大型", "大型"], ["超大型", "超大型"]], { prompt: "選択してください" }, { required: "true", autofocus: "true", class: "form-control" }
+
+            br
+            div.actions
+              = f.submit "Save", class: "btn btn-danger"
