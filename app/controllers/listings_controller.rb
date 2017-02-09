@@ -15,9 +15,6 @@ class ListingsController < ApplicationController
     end
   end
 
-  def edit
-  end
-
   def basics
   end
 
