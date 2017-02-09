@@ -12,8 +12,7 @@
     ul.nav.navbar-nav.navbar-right
       - if !user_signed_in?
         li
-          a[href="#"]
-            | シッターになる
+          = link_to "シッターになる", new_listing_path
         li
           a[href="#"]
             | 利用の流れ
@@ -22,6 +21,8 @@
         li
           = link_to "ログイン", new_user_session_path
       - else
+        li
+          = link_to "シッターになる", new_listing_path
         li.dropdown
           a.dropdown-toggle[href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"]
             - if current_user.provider

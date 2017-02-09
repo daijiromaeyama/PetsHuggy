@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   root 'pages#index'
 
   resources :users, only: :show
+
+  resources :listings, only: :new
 end
