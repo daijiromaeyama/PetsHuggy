@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_listing, only: [:basics, :description]
+  before_action :set_listing, only: [:basics, :description, :address, :price, :photos, :calendar, :bankaccount, :publish]
 
   def new
     # 現在のユーザーのリスティングの作成
@@ -23,6 +23,24 @@ class ListingsController < ApplicationController
   end
 
   def description
+  end
+
+  def address
+  end
+
+  def price
+  end
+
+  def photos
+  end
+
+  def calendar
+  end
+
+  def bankaccount
+  end
+
+  def publish
   end
 
   private
