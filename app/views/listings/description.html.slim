@@ -1,0 +1,31 @@
+nav.navbar.navbar-devise
+  = render 'partial/navbar'
+
+.container
+  .col-md-3
+    = render 'partial/verticalnavbar'
+  .col-md-9
+    .panel.panel-default
+      .panel-heading
+        .text-center
+          span[style="font-size:24px;"]
+            | リスティング内容の編集
+
+      .panel-body
+        = form_for @listing do |f|
+          .row
+            .col-md-12
+              .form-group
+                label
+                  | タイトル
+                = f.text_field :listing_title, placeholder: "リスティングタイトルを記載しましょう", class: "form-control"
+
+          .row
+            .col-md-12
+              .form-group
+                label
+                  | 内容
+                = f.text_area :listing_content, rows: 8, placeholder: "リスティングの内容について記述してください", class: "form-control"
+
+          actions
+            = f.submit "更新", class: "btn btn-danger"
