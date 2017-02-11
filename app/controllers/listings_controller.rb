@@ -1,5 +1,6 @@
 class ListingsController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_listing, only: [:basics, :description]
 
   def new
     # 現在のユーザーのリスティングの作成
@@ -19,13 +20,19 @@ class ListingsController < ApplicationController
   end
 
   def basics
-    @listing = Listing.find(params[:id])
+  end
+
+  def description
   end
 
   private
 
   def listing_params
     params.require(:listing).permit(:home_type, :pet_type, :breeding_years, :pet_size)
+  end
+
+  def set_listing
+    @listing = Listing.find(params[:id])
   end
 
 end
