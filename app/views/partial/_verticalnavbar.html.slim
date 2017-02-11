@@ -7,11 +7,9 @@
     .navbar-collapse.collapse.sidebar-navbar-collapse
       ul.nav.navbar-nav
         li
-          a[href="#"]
-            | 基本事項
-        li.active
-          a[href="#"]
-            | リスティングの内容
+          = link_to "基本事項", manage_listing_basics_path(@listing)
+        li
+          = link_to "リスティングの内容", manage_listing_description_path(@listing)
         li
           a[href="#"]
             | 住所情報
