@@ -1,0 +1,27 @@
+nav.navbar.navbar-devise
+  = render 'partial/navbar'
+
+.container
+  .col-md-3
+    = render 'partial/verticalnavbar'
+  .col-md-9
+    .panel.panel-default
+      .panel-heading
+        .text-center
+          span[style="font-size:24px;"]
+            | 料金の設定
+
+      .panel-body
+        = form_for @listing do |f|
+          .row
+            .col-md-4
+              .form-group
+                label
+                  | 一泊あたりの料金
+                .input-group
+                  .input-group-addon
+                    | 円
+                  = f.text_field :price_pernight, placeholder: "例: 100", class: "form-control"
+
+          .actions
+            = f.submit "更新", class: "btn btn-danger"
