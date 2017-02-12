@@ -1,0 +1,33 @@
+<div class="nav navbar navbar-devise">
+  <%= render 'partial/navbar' %>
+</div>
+
+<div class="container">
+  <div class="col-md-3">
+    <%= render 'partial/verticalnavbar'%>
+  </div>
+  <div class="col-md-9">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="text-center">
+          <span sytle="font-size:24px;">リスティング写真の編集</span>
+        </div>
+      </div>
+
+      <div class="panel-body">
+        <%= form_for @photo, html: { multipart: true, class: "dropzone", id: "my-dropzone" } do |f| %>
+
+          <div class="dz-message needslick">
+            <h3>ファイルをここにドロップしてください。</h3>
+            <strong>アップロードするにはここをクリックしてください</strong>
+
+            <div class="fallback">
+              <%= f.file_field :image %>
+              <%= f.submit "Upload image" %>
+            </div>
+
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
