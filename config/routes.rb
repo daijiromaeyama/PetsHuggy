@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   resources :users, only: :show
 
-  resources :listings, only: [:new, :create, :show, :update]
+  resources :listings, only: [:index, :new, :create, :show, :update]
 
   resources :photos, only: [:create, :destroy] do
     collection do
