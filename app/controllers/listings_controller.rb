@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_listing, only: [:update, :basics, :description, :address, :price, :photos, :calendar, :bankaccount, :publish]
+  before_action :set_listing, only: [:show, :update, :basics, :description, :address, :price, :photos, :calendar, :bankaccount, :publish]
 
   def index
     @listings = current_user.listings
@@ -21,6 +21,7 @@ class ListingsController < ApplicationController
   end
 
   def show
+    @photos = @listing.photos
   end
 
   def update
