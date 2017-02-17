@@ -57,6 +57,8 @@
 
 .ui-datepicker .ui-icon {
   display: none;
+  overflow: visible;
+  text-indent: 0;
 }
 
 .ui-datepicker .ui-datepicker-calendar {
