@@ -26,6 +26,9 @@ nav.navbar.navbar-devise
               = f.text_area :description, rows: 5, cols: 25, placeholder: "自己紹介文", class: 'form-control'
 
             .form-group
+              = f.file_field :image, class: 'form-control'
+
+            .form-group
               = f.label :新しいパスワード
               i
                 | (変更しない場合は空欄で構いません)
