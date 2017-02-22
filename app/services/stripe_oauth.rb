@@ -75,6 +75,7 @@ class StripeOauth < Struct.new( :user )
 
   # Deauthorize the user. Straight-forward enough.
   # See app/controllers/users_controller.rb#deauthorize for counterpart.
+  # https://stripe.com/docs/connect/reference
   def deauthorize!
     response = RestClient.post(
       'https://connect.stripe.com/oauth/deauthorize',
@@ -96,7 +97,8 @@ class StripeOauth < Struct.new( :user )
       stripe_user_id: nil,
       secret_key: nil,
       publishable_key: nil,
-      currency: nil
+      currency: nil,
+      stripe_account_type: nil
     )
   end
 
