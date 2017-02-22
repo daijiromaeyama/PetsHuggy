@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   end
 
   resources :listings do
-    resources :reservations, only: :create
+    resources :reservations, only: %i(new create)
   end
 
   get '/setdate' => 'reservations#setdate'
