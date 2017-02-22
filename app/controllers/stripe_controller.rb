@@ -17,7 +17,7 @@ class StripeController < ApplicationController
 
   # Confirm a connection to a Stripe account.
   # Only works on the currently logged in user.
-  # See app/services/stripe_connect.rb for #verify! details.
+  # See app/services/stripe_oauth.rb for #verify! details.
   def confirm
     connector = StripeOauth.new( current_user )
     if params[:code]
