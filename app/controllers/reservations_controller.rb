@@ -8,6 +8,15 @@ class ReservationsController < ApplicationController
     @listings = current_user.listings
   end
 
+  def new
+    @listing = Listing.find(params[:listing_id])
+    @user = current_user
+    @start_date = params[:reservation][:start_date]
+    @end_date = params[:reservation][:end_date]
+    @price_pernight = params[:reservation][:price_pernight]
+    @total_price = params[:reservation][:total_price]
+  end
+
   def create
     @listing = Listing.find(params[:listing_id])
 
