@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170219051351) do
+ActiveRecord::Schema.define(version: 20170221112114) do
 
   create_table "listings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "home_type"
@@ -78,6 +78,11 @@ ActiveRecord::Schema.define(version: 20170219051351) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "publishable_key"
+    t.string   "secret_key"
+    t.string   "stripe_user_id"
+    t.string   "currency"
+    t.string   "stripe_account_type"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end

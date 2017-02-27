@@ -20,6 +20,8 @@ gem 'dropzonejs-rails'
 gem 'aws-sdk', '~> 2.3'
 gem 'geocoder'
 gem 'jquery-ui-rails'
+gem 'stripe'
+gem "rest-client"
 
 group :production, :staging do
   gem 'rails_12factor'
