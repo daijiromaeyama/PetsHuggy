@@ -2,7 +2,8 @@
   .text-center
     h4
       | There is no review yet
-- else @reviews.order('id desc').each do |review|
+- else
+  - @reviews.order('id desc').each do |review|
   hr
   .row
     .col-md-2.text-center
