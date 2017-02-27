@@ -61,13 +61,17 @@ class ReservationsController < ApplicationController
       # Charge
       amount = params[:reservation][:total_price]
 
+      # fee
+      fee = (amount.to_i * 0.1).to_i
+
       # Calculate the fee amount that goes to the application.
       begin
         charge_attrs = {
           amount: amount,
           currency: user.currency,
           source: params[:token],
-          description: "Test Charge via Stripe Connect"
+          description: "Test Charge via Stripe Connect",
+          application_fee: fee
         }
 
       # Use the platform's access token, and specify the
