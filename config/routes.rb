@@ -4,9 +4,9 @@ Rails.application.routes.draw do
 
   resources :users, only: :show
 
-  resources :listings, only: [:index, :new, :create, :show, :update]
+  resources :listings, only: %i(index new create show update)
 
-  resources :photos, only: [:create, :destroy] do
+  resources :photos, only: %i(create destroy) do
     collection do
       get :list
     end
