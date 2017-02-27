@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
   def destroy
     @review = Review.find(params[:id])
     listing = @review.listing
-    @reivew.destroy
+    @review.destroy
     redirect_to listing
   end
 
