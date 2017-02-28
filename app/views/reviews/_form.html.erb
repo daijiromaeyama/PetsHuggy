@@ -10,3 +10,11 @@
     <%= f.submit "このシッターを評価する", class: "btn btn-danger" %>
   </div>
 <% end %>
+
+<script type="text/javascript">
+  $("#rate_stars").raty({
+    path: '/assets',
+    scoreName: 'review[rate]',
+    score: 1
+  });
+</script>
