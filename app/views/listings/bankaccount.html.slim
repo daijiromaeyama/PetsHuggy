@@ -13,7 +13,9 @@ nav.navbar.navbar-devise
             | 受取講座情報の編集
 
       .panel-body
-        - if @user.connected?
+        - if @listing.active
+          | リスティングを非公開にしてから、編集してください。
+        - elsif @user.connected?
           = render 'stripe/setting'
         - else
           = render 'stripe/connect'
