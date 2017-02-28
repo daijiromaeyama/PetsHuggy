@@ -21,7 +21,7 @@ nav.navbar.navbar-devise
                 .input-group
                   .input-group-addon
                     | 円
-                  = f.text_field :price_pernight, placeholder: "例: 100", class: "form-control"
+                  = f.text_field :price_pernight, placeholder: "例: 100", class: "form-control", required: "true"
 
           .actions
             = f.submit "更新", class: "btn btn-danger"

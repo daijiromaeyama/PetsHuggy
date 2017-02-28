@@ -18,14 +18,14 @@ nav.navbar.navbar-devise
               .form-group
                 label
                   | タイトル
-                = f.text_field :listing_title, placeholder: "リスティングタイトルを記載しましょう", class: "form-control"
+                = f.text_field :listing_title, placeholder: "リスティングタイトルを記載しましょう", class: "form-control", required: "true"
 
           .row
             .col-md-12
               .form-group
                 label
                   | 内容
-                = f.text_area :listing_content, rows: 8, placeholder: "リスティングの内容について記述してください", class: "form-control"
+                = f.text_area :listing_content, rows: 8, placeholder: "リスティングの内容について記述してください", class: "form-control", required: "true"
 
           actions
             = f.submit "更新", class: "btn btn-danger"
