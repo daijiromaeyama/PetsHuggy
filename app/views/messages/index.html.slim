@@ -13,7 +13,7 @@ nav.navbar.navbar-devise
     .col-md-9
       .panel.panel-default
         .panel-heading
-          | Conversation with
+          | Conversation with 
           = @other.name
         .panel-body
           = form_for [@conversation, @conversation.messages.new], remote: true do |f|
