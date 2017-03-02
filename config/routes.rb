@@ -20,6 +20,10 @@ Rails.application.routes.draw do
     resources :reviews, only: %i(create destroy)
   end
 
+  resources :conversations, only: %i(index create) do
+    resources :messages, only: %i(index create)
+  end
+
   get '/setdate' => 'reservations#setdate'
   get '/duplicate' => 'reservations#duplicate'
   get '/reservations' => 'reservations#index'

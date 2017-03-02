@@ -1,0 +1,25 @@
+nav.navbar.navbar-devise
+  = render 'partial/navbar'
+
+.container
+  .row
+    .col-md-12
+      .panel.panel-default
+        .panel-heading.text-center
+          | Conversations
+        - @conversations.each do |conversation|
+          - other = conversation.sender == current_user ? conversation.recipient : conversation.sender
+          - if !conversation.messages.blank?
+            .panel-body.panel-conversation
+              .row
+                .col-md-2.text-center.row-space-1
+                  = image_tag other.image, class: "img-circle profile-1"
+                  strong
+                    = other.name
+                = link_to conversation_messages_path(conversation), class: "col-md-8" do
+                  = conversation.messages.last.body
+
+                .col-md-2
+                  = conversation.messages.last.message_time
+            hr
+
