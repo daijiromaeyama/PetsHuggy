@@ -5,7 +5,7 @@ class Conversation < ApplicationRecord
   belongs_to :recipient, foreign_key: "recipient_id", class_name: 'User'
   has_many :messages, dependent: :destroy
 
-  # commentsデーブルに、同一のrecipient_idに対するsender_idは一意である。
+  # commentsテーブルに、同一のrecipient_idに対するsender_idは一意である。
   # 特定の二人のConversationはひとつ
   validates_uniqueness_of :sender_id, scope: "recipient_id"
 
