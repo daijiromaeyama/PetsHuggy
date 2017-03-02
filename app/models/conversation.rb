@@ -11,6 +11,7 @@ class Conversation < ApplicationRecord
 
   #scopeは長い条件文を省略するために使用
   scope :involving, -> (user) do
+    # user.id = current_user ... controllerの引数より
     where("conversations.sender_id =? OR conversations.recipient_id =?",user.id,user.id)
   end
 
