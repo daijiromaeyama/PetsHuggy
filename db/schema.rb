@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170228091310) do
+ActiveRecord::Schema.define(version: 20170302002102) do
+
+  create_table "conversations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "sender_id"
+    t.integer  "recipient_id"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
 
   create_table "listings", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "home_type"
@@ -29,6 +36,16 @@ ActiveRecord::Schema.define(version: 20170228091310) do
     t.float    "longitude",       limit: 24
     t.integer  "not_checked"
     t.index ["user_id"], name: "index_listings_on_user_id", using: :btree
+  end
+
+  create_table "messages", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.text     "body",            limit: 65535
+    t.integer  "conversation_id"
+    t.integer  "user_id"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+    t.index ["conversation_id"], name: "index_messages_on_conversation_id", using: :btree
+    t.index ["user_id"], name: "index_messages_on_user_id", using: :btree
   end
 
   create_table "photos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -100,6 +117,8 @@ ActiveRecord::Schema.define(version: 20170228091310) do
   end
 
   add_foreign_key "listings", "users"
+  add_foreign_key "messages", "conversations"
+  add_foreign_key "messages", "users"
   add_foreign_key "photos", "listings"
   add_foreign_key "reservations", "listings"
   add_foreign_key "reservations", "users"
