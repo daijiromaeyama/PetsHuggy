@@ -10,13 +10,13 @@ nav.navbar.navbar-devise
        = @other.name
       = link_to "Show Profile", @other, class: "btn btn-default btn-wide row-space-2 row-space-top-2"
 
-      .col-md-9
-        .panel.panel-default
-          .panel-heading
-            | Conversation with
-            = @other.name
-          .panel-body
-            = form_for [@conversation, @conversation.messages.new], remote: true do |f|
+    .col-md-9
+      .panel.panel-default
+        .panel-heading
+          | Conversation with
+          = @other.name
+        .panel-body
+          = form_for [@conversation, @conversation.messages.new], remote: true do |f|
             .form-group
               = f.text_area :body, placeholder: "Write your messages here", class: "form-control"
             = f.hidden_field :user_id, value: current_user.id
@@ -24,5 +24,5 @@ nav.navbar.navbar-devise
             .actions
               = f.submit "Send", class: "btn btn-danger pull-right"
 
-        #id="chat"
-          = render @messages
+      #chat
+        = render @messages
