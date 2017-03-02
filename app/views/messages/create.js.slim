@@ -1,7 +1,0 @@
-// prepend _message.html.slim to #chat
-$('#chat').prepend(
-  "# { j(render partial: 'message', local: { message: @message })}"
-);
-
-// メッセージの入力欄を空にする
-$('#new_message')[0].reset();
