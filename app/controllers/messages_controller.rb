@@ -7,7 +7,7 @@ class MessagesController < ApplicationController
     # check if this current_user are involved in conversation
     if current_user == @conversation.sender || current_user == @conversation.recipient
       @other = current_user == @conversation.sender ? @conversation.recipient : @conversation.sender
-      @message = @conversation.message.order("created_at DESC")
+      @messages = @conversation.messages.order("created_at DESC")
     else
       redirect_to conversations_path, alert: "他人のメッセージにアクセスできません"
     end
