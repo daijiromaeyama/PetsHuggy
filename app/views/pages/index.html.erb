@@ -10,6 +10,30 @@
       </div>
     </div>
   </div>
+
+  <div class="top-search-field">
+    <%= form_tag "", method: :get do %>
+      <div class="row">
+        <div class="container">
+          <div class="col-md-7 col-xs-10" style="padding-right: 0px">
+            <%= text_field_tag :search, params[:search], placeholder: "希望の場所はどうですか？", class: "form-control" %>
+          </div>
+
+          <div class="col-md-2 hidden-xs hidden-sm">
+            <%= text_field_tag :start_date, params[:start_date], placeholder: "チェックイン", class: "form-control" %>
+          </div>
+
+          <div class="col-md-2 hidden-xs hidden-sm">
+            <%= text_field_tag :end_date, params[:end_date], placeholder: "チェックアウト", class: "form-control" %>
+          </div>
+
+          <div class="col-md-1 col-xs-2" style="padding-left: 0px;">
+            <%= submit_tag "検索", class: "btn btn-danger" %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
 
 <h1>Pages#index</h1>
