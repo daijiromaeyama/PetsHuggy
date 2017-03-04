@@ -102,8 +102,30 @@ function initMap() {
       map.setZoom(17);
     } else {
       map.setCenter(place.geometry.location);
-      map.setZoom(15);  // Why 17? Because it looks good.
+      map.setZoom(17);  // Why 17? Because it looks good.
     }
+
+    // 入力欄の場所の緯度経度情報を取得
+    var lat = place.geometry.location.lat();
+    var lng = place.geometry.location.lng();
+
+    // 緯度経度情報をまとめる
+    var geolocation = [lat,lng];
+
+    // 場所の住所
+    var location = place.formatted_address;
+
+    // autocompleteの入力欄が変更されたらurlも変更して履歴に残す
+    url = "/search?utf8=✓&search="+place.formatted_address;
+
+    window.history.pushState(null, null, url);
+
+    $.ajax({
+      url: '/ajaxsearch',
+        // this data is data for sending to url
+        data: { 'geolocation': geolocation }
+    });
+
   });
 }
 
