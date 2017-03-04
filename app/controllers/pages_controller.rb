@@ -6,11 +6,17 @@ class PagesController < ApplicationController
 
   def search
     if params[:search].present?
-      @latitude = params["lat"]
-      @longitude = params["lng"]
+      if params["lat"].present? & params["lng"].present?
+        @latitude = params["lat"]
+        @longitude = params["lng"]
 
-      geolocation = [@latitude, @longitude]
-      @listings = Listing.where(active: true).near(geolocation, 1, order: 'distance')
+        geolocation = [@latitude, @longitude]
+      else
+        geolocation = Geocoder.coordinates(params[:search])
+        @latitude = geolocation[0]
+        @longitude = geolocation[1]
+      end
+    @listings = Listing.where(active: true).near(geolocation, 1, order: 'distance')
     else
       @listings = Listing.where(active: true).all
       @latitude = @listings.to_a[0].latitude
