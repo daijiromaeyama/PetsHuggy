@@ -8,6 +8,9 @@ class PagesController < ApplicationController
     if params[:search].present?
       @latitude = params["lat"]
       @longitude = params["lng"]
+
+      geolocation = [@latitude, @longitude]
+      @listings = Listing.where(active: true).near(geolocation, 1, order: 'distance')
     else
       @listings = Listing.where(active: true).all
       @latitude = @listings.to_a[0].latitude
