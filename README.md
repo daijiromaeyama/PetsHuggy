@@ -11,5 +11,10 @@ PetsHuggy
 |:----:|:------:|:------:|:----:|:----:|:----:|:----------:|:---------:|:-------------:|:--------:|:------------:|:------------:|:------:|:----:|
 |string|sting   |string  |string|string|string|string      |string     |string         |string    |string        |string        |string  |string|
 
+### Listings
+|home_type|pet_type|pet_size|breeding_years|address|listing_title|listing_content|price_pernight|active |user      |latitude|ongitude|not_checked|
+|:-------:|:------:|:------:|:------------:|:-----:|:-----------:|:-------------:|:------------:|:-----:|:--------:|:------:|:------:|:---------:|
+|string   |string  |string  |integer       |string |string       |text           |integer       |boolean|references|float   |float   |integer    |
+
 ## Author
 [daijiromaeyama](https://github.com/daijiromaeyama)
