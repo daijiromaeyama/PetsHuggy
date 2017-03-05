@@ -1,5 +1,7 @@
 <!-- Search Form -->
 <%= search_form_for @search, url: search_path do |f| %>
+  <%= hidden_field_tag :search, session[:address], id: "search-address" %>
+
   <div class="filter">
     <!-- カレンダー -->
     <div class="row filter-section">
