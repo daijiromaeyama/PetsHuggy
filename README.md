@@ -21,5 +21,10 @@ PetsHuggy
 |:--------:|
 |references|
 
+### Reservations
+|user_id   |listing_id|start_date|end_date|price_pernight|total_price|self_booking|
+|:--------:|:--------:|:--------:|:------:|:------------:|:---------:|:----------:|
+|references|references|datetime  |datetime|integer       |integer    |boolean     |
+
 ## Author
 [daijiromaeyama](https://github.com/daijiromaeyama)
