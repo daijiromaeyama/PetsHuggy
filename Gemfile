@@ -24,6 +24,7 @@ gem 'stripe'
 gem "rest-client"
 gem "private_pub"
 gem "thin"
+gem 'ransack'
 
 group :production, :staging do
   gem 'rails_12factor'
