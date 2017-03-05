@@ -16,7 +16,7 @@ PetsHuggy
 |:-------:|:------:|:------:|:------------:|:-----:|:-----------:|:-------------:|:------------:|:-----:|:--------:|:------:|:------:|:---------:|
 |string   |string  |string  |integer       |string |string       |text           |integer       |boolean|references|float   |float   |integer    |
 
-### photos
+### Photos
 |listing_id|
 |:--------:|
 |references|
