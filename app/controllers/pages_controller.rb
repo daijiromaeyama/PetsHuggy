@@ -16,7 +16,10 @@ class PagesController < ApplicationController
         @latitude = geolocation[0]
         @longitude = geolocation[1]
       end
-    @listings = Listing.where(active: true).near(geolocation, 1, order: 'distance')
+
+      @listings = Listing.where(active: true).near(geolocation, 1, order: 'distance')
+
+    # 検索欄が空欄の場合
     else
       @listings = Listing.where(active: true).all
       @latitude = @listings.to_a[0].latitude
@@ -70,14 +73,14 @@ class PagesController < ApplicationController
     @search = @listings.ransack(session[:q])
     @result = @search.result(distinct: true)
 
-    # リスティングデータを配列にしてまとめる
-    @arrlistings = @listings.to_a
-
-    session[:start_date] = params[:start_date]
-    session[:end_date] = params[:start_date]
+    #リスティングデータを配列にしてまとめる
+    @arrlistings = @result.to_a
 
     # start_date end_dateの間に予約がないことを確認.あれば削除
     if ( !params[:start_date].blank? && !params[:end_date].blank? )
+
+      session[:start_date] = params[:start_date]
+      session[:end_date] = params[:end_date]
 
       start_date = Date.parse(session[:start_date])
       end_date = Date.parse(session[:end_date])
@@ -137,5 +140,6 @@ class PagesController < ApplicationController
     end
 
     respond_to :js
+
   end
 end
