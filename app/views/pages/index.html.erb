@@ -85,8 +85,10 @@
                 <%= image_tag user.listings[0].photos[0].image.url(:medium) %>
               <% end %>
               <div class="portfolio-caption">
-                <%= image_tag user.image, class: "img-circle profile-1" %>
-                <spac style="font-weight: bold;"><%= user.name %>さん</spac>
+                <%= link_to user_path(user) do %>
+                  <%= image_tag user.image, class: "img-circle profile-1" %>
+                  <spac style="font-weight: bold;"><%= user.name %>さん</spac>
+                <% end %>
               </div>
             </div>
           <% end %>
