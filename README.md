@@ -48,5 +48,31 @@ PetsHuggy
 - has_many :reservations
 - has_many :reviews
 
+### Listing
+- belongs_to :user
+- has_many :photos
+- has_many :reservations
+- has_many :reviews
+
+### Photo
+- belongs_to :listing
+
+### Reservation
+- belongs_to :user
+- belongs_to :listing
+
+### Review
+- belongs_to :listing
+- belongs_to :user
+
+### Conversation
+- belongs_to :sender
+- belongs_to :recipient
+- has_many :messages
+
+### Message
+- belongs_to :conversation
+- belongs_to :user
+
 ## Author
 [daijiromaeyama](https://github.com/daijiromaeyama)
