@@ -41,5 +41,12 @@ PetsHuggy
 |:--:|:-------------:|:--------:|
 |text|references     |references|
 
+## Asociation
+
+### User
+- has_many :listings
+- has_many :reservations
+- has_many :reviews
+
 ## Author
 [daijiromaeyama](https://github.com/daijiromaeyama)
