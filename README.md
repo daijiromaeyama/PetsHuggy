@@ -26,5 +26,20 @@ PetsHuggy
 |:--------:|:--------:|:--------:|:------:|:------------:|:---------:|:----------:|
 |references|references|datetime  |datetime|integer       |integer    |boolean     |
 
+### Reviews
+|description|rate   |lisiting_id|user_id   |
+|:---------:|:-----:|:---------:|:--------:|
+|text       |integer|references |references|
+
+### Conversations
+|sender_id|recipient_id|
+|:-------:|:----------:|
+|integer  |integer     |
+
+### Messages
+|body|conversation_id|user_id   |
+|:--:|:-------------:|:--------:|
+|text|references     |references|
+
 ## Author
 [daijiromaeyama](https://github.com/daijiromaeyama)
