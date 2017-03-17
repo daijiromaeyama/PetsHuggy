@@ -1,9 +1,6 @@
-<div class="nav navbar navbar-devise">
+<div class="nav navbar-devise">
   <%= render 'partial/navbar' %>
 </div>
-
-<!-- ジャンボトロン -->
-<div class="jumbotron row-space-0" style="margin-top: -20px; background: none;">
 
   <!-- カルーセル -->
   <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -21,7 +18,7 @@
       <% if @photos %>
         <% @photos.each do |photo| %>
           <div class="item <%= 'active' if photo.id == @photos[0].id %>">
-            <%= image_tag photo.image.url(),style: "height: 714px; width: 100%; overflow: hidden;" %>
+            <%= image_tag photo.image.url(), style: "height: 100%; width: 100%; overflow: hidden;" %>
           </div>
         <% end %>
       <% end %>
@@ -39,8 +36,6 @@
       </a>
     <% end %>
   </div>
-
-</div>
 
 <!-- サマリー -->
 <div class="container-fluid container-listing-show">
