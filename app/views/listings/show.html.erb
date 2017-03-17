@@ -2,40 +2,40 @@
   <%= render 'partial/navbar' %>
 </div>
 
-  <!-- カルーセル -->
-  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+<!-- カルーセル -->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
 
-    <!-- リストの点 -->
-    <% if @photos.length > 1 %>
-      <ol class="carousel-indicators">
-        <% @photos.each do |photo| %>
-            <li data-target="#myCarousel" data-slide-to="<%= photo.id %>"></li>
-        <% end %>
-      </ol>
-    <% end %>
-
-    <div class="carousel-inner" role="listbox">
-      <% if @photos %>
-        <% @photos.each do |photo| %>
-          <div class="item <%= 'active' if photo.id == @photos[0].id %>">
-            <%= image_tag photo.image.url(), style: "height: 100%; width: 100%; overflow: hidden;" %>
-          </div>
-        <% end %>
+  <!-- リストの点 -->
+  <% if @photos.length > 1 %>
+    <ol class="carousel-indicators">
+      <% @photos.each do |photo| %>
+          <li data-target="#myCarousel" data-slide-to="<%= photo.id %>"></li>
       <% end %>
-    </div>
+    </ol>
+  <% end %>
 
-    <!-- 左右の矢印 -->
-    <% if @photos.length > 1%>
-      <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+  <div class="carousel-inner" role="listbox">
+    <% if @photos %>
+      <% @photos.each do |photo| %>
+        <div class="item <%= 'active' if photo.id == @photos[0].id %>">
+          <%= image_tag photo.image.url(), style: "height: 100%; width: 100%; overflow: hidden;" %>
+        </div>
+      <% end %>
     <% end %>
   </div>
+
+  <!-- 左右の矢印 -->
+  <% if @photos.length > 1%>
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  <% end %>
+</div>
 
 <!-- サマリー -->
 <div class="container-fluid container-listing-show">
